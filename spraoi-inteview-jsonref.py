@@ -1,5 +1,4 @@
 import jsonref
-import json
 
 schema = jsonref.loads('''{
   "$id": "https://example.com/nested-schema.json",
@@ -57,11 +56,6 @@ schema = jsonref.loads('''{
   "description": "nested-schema"
 }''')
 
-json_object=schema
-
-json_formatted_str = json.dumps(json_object, indent=2)
-
-print(json_formatted_str)
 
 def get_type_for_key_path(schema: dict, key_path: str) -> str:
 
