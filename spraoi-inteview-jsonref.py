@@ -1,3 +1,13 @@
+'''
+Name:- Coding exercise for spraoi
+Purpose:- This program will take a json file as a dict and a key path to return the type
+
+Developed By            Version             Release Date    Version Description
+Omar Chowdhury          1.1.0               04/02/2020      jsonref library has been used to resolve the reference
+                                                            there is a nested function inside the main function which
+                                                            will navigate through the json schema in a recursive fashion
+'''
+
 import jsonref
 
 schema = jsonref.loads('''{
@@ -59,6 +69,10 @@ schema = jsonref.loads('''{
 
 def get_type_for_key_path(schema: dict, key_path: str) -> str:
 
+    '''
+    this is a recursive function which will navigate through the json file and will
+    assign value for type key in a nonlocal variable based on the key path
+    '''
     def nestedJson(schema: dict, key_path: str):
         nonlocal rtnValue
         d = "definitions"
