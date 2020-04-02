@@ -81,9 +81,10 @@ def get_type_for_key_path(schema: dict, key_path: str) -> str:
         elif len(key)==1: rtnValue=schema[p][k][t]
         else: rtnValue=None
 
-    rtnValue = None
+    rtnValue = ''
     nestedJson(schema, key_path)
-    return rtnValue
+    if rtnValue !='':
+        return rtnValue
 
 
 assert(get_type_for_key_path(schema, "Age") == "integer")
